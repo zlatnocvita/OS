@@ -1,0 +1,10 @@
+#!/usr/bin/python
+# -*- coding:UTF-8 -*-
+print('Hello, world!')
+a = 1
+exp = 0
+while 1:
+	a = 2 ** exp
+	exp = exp + 1
+	if a<1000:
+		print(a)
