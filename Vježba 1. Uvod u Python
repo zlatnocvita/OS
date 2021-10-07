@@ -1,3 +1,4 @@
+#1
 #!/usr/bin/python
 # -*- coding:UTF-8 -*-
 a = 1
@@ -7,3 +8,13 @@ while 1:
 	exp = exp + 1
 	if a<1000:
 		print(a)
+#2
+#!/usr/bin/python
+# -*- coding:UTF-8 -*-)
+a = [int(x) for x in input("Unesi brojeve: ").split(" ")]
+a.sort()
+print("najmanji: ", end="")
+print(a[0])
+print("najveći: ", end="")
+i = len(a)-1
+print(a[i])
