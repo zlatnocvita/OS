@@ -41,3 +41,20 @@ print("neparni: ")
 print(a)
 print("parni: ")
 print(b)
+
+#4
+#!/usr/bin/python
+# -*- coding:UTF-8 -*-
+x = int(input("Unesi broj: "))
+def prost_broj(x):
+	i = 2
+	while i <= x:
+		if x % i != 0:
+			i = i+1
+		if x % i == 0 and i < x:
+			return False
+		if x % i == 0 and i == x:
+			print(x)
+			return True
+output = prost_broj(x)
+print(output)
