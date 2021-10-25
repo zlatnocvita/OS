@@ -27,14 +27,12 @@ def simulacija_obrade_prekida ( prioritet ):
 
 def prekidna_rutina ( signal, frame ):
     global TEKUCI_PRIORITET
-    prioritet = int(input("Unesi prioritet prekida: "))
+    prioritet = int(input("\n Unesi prioritet prekida: "))
     if prioritet == 10:
         print ( "\nKraj rada" )
         sys.exit(1)
-        
+    OZNAKA_CEKANJA[prioritet]=1
     ispisi_pojavu_signala ( prioritet )
-    #odredi uzrok prekida, tj. indeks i
-    #OZNAKA_CEKANJA[prioritet] = 1
     while prioritet > TEKUCI_PRIORITET:
         OZNAKA_CEKANJA[prioritet] = 0
         PRIORITET[prioritet] = TEKUCI_PRIORITET
@@ -44,8 +42,7 @@ def prekidna_rutina ( signal, frame ):
         #zabrani prekidanje
         TEKUCI_PRIORITET = PRIORITET[prioritet]
         prioritet = 0
-        j = TEKUCI_PRIORITET + 1 
-        for  j in range (1 , 6):
+        for  j in range (TEKUCI_PRIORITET+1, 6):
             if OZNAKA_CEKANJA[j]!=0:
                     prioritet = j
 
